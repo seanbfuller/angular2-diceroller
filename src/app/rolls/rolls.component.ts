@@ -11,9 +11,11 @@ export class RollsComponent implements OnInit {
 
   rolls: Roll[] = [];
   numRolls: number;
+  rollGoal: number;
 
   constructor(private rollsService: RollsService) {
-    this.numRolls = 5;
+    this.numRolls = 10;
+    this.rollGoal = 5;
   }
 
   ngOnInit() {
@@ -22,7 +24,7 @@ export class RollsComponent implements OnInit {
 
   getRolls(): void {
     this.clearRolls();
-    this.rolls = this.rollsService.getRolls(this.numRolls);
+    this.rolls = this.rollsService.getRolls(this.numRolls, this.rollGoal);
   }
 
   clearRolls() {

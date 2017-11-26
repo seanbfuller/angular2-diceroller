@@ -4,6 +4,10 @@
     <input [(ngModel)]="numRolls" name="numRolls">
   </div>
   <div>
+    <label for="rollGoal">Goal:</label><br>
+    <input [(ngModel)]="rollGoal" name="rollGoal">
+  </div>
+  <div>
     <button (click)="getRolls()">Update</button>
   </div>
 </div>
@@ -12,8 +16,8 @@
 
 <div class="rolls-list">
   <ul>
-    <li *ngFor="let roll of rolls">
-      <span>roll: </span>{{roll.roll}}
+    <li *ngFor="let roll of rolls" [class.success]="roll.roll >= rollGoal">
+      <span>{{roll.message}}: </span>{{roll.roll}}
     </li>
   </ul>
 </div>

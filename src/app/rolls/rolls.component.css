@@ -1,3 +1,10 @@
 .rolls-list {
   text-align: left;
 }
+.rolls-list li {
+  color: #fd9898;
+}
+.rolls-list li.success {
+  color: green;
+  font-weight: bold;
+}
