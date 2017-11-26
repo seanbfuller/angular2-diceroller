@@ -1,6 +1,6 @@
 <div class="rolls-form">
   <div>
-    <label for="numRolls">Number of Rolls:</label><br />
+    <label for="numRolls">Number of Rolls:</label><br>
     <input [(ngModel)]="numRolls" name="numRolls">
   </div>
   <div>
@@ -8,10 +8,12 @@
   </div>
 </div>
 
-<br />
+<br>
 
-<div>
-  <li *ngFor="let roll of rolls">
-    <span>roll: </span>{{roll.roll}}
-  </li>
+<div class="rolls-list">
+  <ul>
+    <li *ngFor="let roll of rolls">
+      <span>roll: </span>{{roll.roll}}
+    </li>
+  </ul>
 </div>
