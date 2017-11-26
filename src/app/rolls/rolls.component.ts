@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Roll } from '../roll'
+import { Roll } from './roll';
 import { RollsService } from './rolls.service';
 
 @Component({
@@ -9,18 +9,24 @@ import { RollsService } from './rolls.service';
 })
 export class RollsComponent implements OnInit {
 
-  rolls: Roll[];
+  rolls: Roll[] = [];
   numRolls: number;
 
-  constructor(private rollsService: RollsService) { }
+  constructor(private rollsService: RollsService) {
+    this.numRolls = 5;
+  }
 
   ngOnInit() {
     this.getRolls();
   }
 
   getRolls(): void {
-    this.numRolls = 5;
+    this.clearRolls();
     this.rolls = this.rollsService.getRolls(this.numRolls);
+  }
+
+  clearRolls() {
+    this.rolls.length = 0;
   }
 
 }

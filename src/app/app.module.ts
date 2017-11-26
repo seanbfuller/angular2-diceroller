@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { RollsComponent } from './rolls/rolls.component';
@@ -12,7 +12,8 @@ import { RollsService } from './rolls/rolls.service';
     RollsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [RollsService],
   bootstrap: [AppComponent]
