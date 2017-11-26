@@ -8,16 +8,19 @@ export class RollsService {
 
   constructor() { }
 
-  getRolls(numRolls: number, rollGoal: number): Roll[] {
+  getRolls(numRolls: number, rollGoal: number, rollModifier: number): Roll[] {
     for(var i=0; i <= numRolls; i++){
       
       // Create the roll
       let r = new Roll;
       r.id = i;
-      r.roll = this.generateRandomRoll();
+      r.roll = this.generateRandomRoll() + rollModifier;
 
       // update the success/fail message
-      if(r.roll >= rollGoal) {
+      if(r.roll - rollModifier === 20) {
+        r.message = "Success (Natural 20!)";
+      }
+      else if(r.roll >= rollGoal) {
         r.message = "Success";
       }
       else if(r.roll < rollGoal) {
@@ -31,7 +34,7 @@ export class RollsService {
     return this.rolls;
   }
 
-  generateRandomRoll(min: number = 1, max: number = 6) {
+  generateRandomRoll(min: number = 1, max: number = 20) {
     return Math.floor(Math.random()*(max-min+1)+min);
   }
 

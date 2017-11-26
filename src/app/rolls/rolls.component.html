@@ -1,11 +1,15 @@
 <div class="rolls-form">
   <div>
     <label for="numRolls">Number of Rolls:</label><br>
-    <input [(ngModel)]="numRolls" name="numRolls">
+    <input [(ngModel)]="numRolls" type="number" name="numRolls" min="1" max="40" step="1">
   </div>
   <div>
-    <label for="rollGoal">Goal:</label><br>
-    <input [(ngModel)]="rollGoal" name="rollGoal">
+    <label for="rollGoal">DC:</label><br>
+    <input [(ngModel)]="rollGoal" type="number" name="rollGoal" min="1" max="50" step="1">
+  </div>
+  <div>
+    <label for="rollModifier">Modifier:</label><br>
+    <input [(ngModel)]="rollModifier" type="number" name="rollModifier" min="-50" max="50" step="1">
   </div>
   <div>
     <button (click)="getRolls()">Update</button>
@@ -15,9 +19,18 @@
 <br>
 
 <div class="rolls-list">
-  <ul>
-    <li *ngFor="let roll of rolls" [class.success]="roll.roll >= rollGoal">
-      <span>{{roll.message}}: </span>{{roll.roll}}
-    </li>
-  </ul>
+  <table>
+    <thead>
+      <th>#</th>
+      <th>Result</th>
+      <th>Roll</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let roll of rolls" [class.success]="roll.roll >= rollGoal">
+        <td class="roll-id">{{roll.id}}</td> 
+        <td class="roll-message">{{roll.message}}</td>
+        <td class="roll-value">{{roll.roll}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
