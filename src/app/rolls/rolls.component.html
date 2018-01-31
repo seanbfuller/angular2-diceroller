@@ -1,18 +1,18 @@
 <div class="rolls-form">
-  <div>
-    <label for="numRolls">Number of Rolls:</label><br>
+  <div class="form-item">
+    <label for="numRolls">Number of Rolls:</label>
     <input [(ngModel)]="numRolls" type="number" name="numRolls" min="1" max="40" step="1">
   </div>
-  <div>
-    <label for="rollGoal">DC:</label><br>
+  <div class="form-item">
+    <label for="rollGoal">Difficulty Class:</label>
     <input [(ngModel)]="rollGoal" type="number" name="rollGoal" min="1" max="50" step="1">
   </div>
-  <div>
-    <label for="rollModifier">Modifier:</label><br>
+  <div class="form-item">
+    <label for="rollModifier">Modifier:</label>
     <input [(ngModel)]="rollModifier" type="number" name="rollModifier" min="-50" max="50" step="1">
   </div>
-  <div>
-    <button (click)="getRolls()">Update</button>
+  <div class="form-item-button">
+    <button (click)="getRolls()">Roll!</button>
   </div>
 </div>
 
