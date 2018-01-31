@@ -1,0 +1,48 @@
+@import "../../../scss/variables.scss";
+
+.rolls-form {
+  display: block;
+  background-color: #666666;
+  color: #ffffff;
+  padding: 1em;
+  max-width: 800px;
+
+  .form-item {
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+    text-align: left;
+    align-items: center;
+
+    .label,
+    input {
+      display: block;
+      width: 90%;
+    }
+
+  }
+
+}
+
+@media (min-width: $breakpoint-min-small) {
+  .rolls-form {
+    display: flex;
+    flex-wrap: wrap;
+
+    .form-item {
+      background-color: red;
+      display: flex;
+      margin-left: 1em;
+      flex-direction: row;
+      flex-basis: content;
+      white-space: nowrap;
+
+      input {
+        margin-left: 1em;
+        width: auto;
+      }
+
+    }
+
+  }
+}

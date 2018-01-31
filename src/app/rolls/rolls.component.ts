@@ -5,7 +5,7 @@ import { RollsService } from './rolls.service';
 @Component({
   selector: 'app-rolls',
   templateUrl: './rolls.component.html',
-  styleUrls: ['./rolls.component.css']
+  styleUrls: ['./scss/rolls.component-form.scss', './scss/rolls.component-list.scss']
 })
 export class RollsComponent implements OnInit {
 
