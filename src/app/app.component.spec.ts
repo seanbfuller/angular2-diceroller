@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { RollsComponent } from './rolls/rolls.component';
 import { RollsService } from './rolls/rolls.service';
 
+// Create a mock service for RollsService
 class MockService {
   getRolls() {
     return [{
@@ -21,9 +22,11 @@ describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
 
   beforeEach(async(() => {
+    // Create an instance of the service
     let mockService = new MockService();
     TestBed.configureTestingModule({
       imports: [ FormsModule ],
+      // Add the service as a provider using the mock service
       providers: [{provide: RollsService, useValue: mockService }],
       declarations: [
         AppComponent,
@@ -48,4 +51,5 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to Test App!');
   }));
+
 });
