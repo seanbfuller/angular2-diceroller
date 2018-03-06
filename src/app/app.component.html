@@ -4,6 +4,11 @@
     Welcome to {{ title }}!
   </h1>
 
+  <nav>
+    <a routerLink="/hit-rolls" routerLinkActive="active">Hit rolls</a>
+    <a routerLink="/skill-rolls" routerLinkActive="active">Skill rolls</a>
+  </nav>
   
-  <app-rolls></app-rolls>
+  <router-outlet></router-outlet>
+
 </div>
