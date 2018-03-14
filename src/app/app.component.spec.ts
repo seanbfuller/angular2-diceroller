@@ -1,6 +1,6 @@
 
 import { TestBed, ComponentFixture, async } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -25,7 +25,10 @@ describe('AppComponent', () => {
     // Create an instance of the service
     let mockService = new MockService();
     TestBed.configureTestingModule({
-      imports: [ FormsModule ],
+      imports: [ 
+        RouterTestingModule, 
+        FormsModule 
+      ],
       // Add the service as a provider using the mock service
       providers: [{provide: RollsService, useValue: mockService }],
       declarations: [
