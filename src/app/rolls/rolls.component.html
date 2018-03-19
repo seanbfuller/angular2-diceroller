@@ -1,40 +1,47 @@
-<div class="rolls-form">
-  <div class="form-items">
-    <div class="form-item">
-      <label for="numRolls">Number of Rolls:</label>
-      <input [(ngModel)]="numRolls" type="number" name="numRolls" min="1" max="40" step="1">
+<div class="container">
+
+  <div class="rolls-form">
+    <div class="form-items">
+      <div class="form-item">
+        <label for="numRolls">Number of Rolls:</label>
+        <input [(ngModel)]="numRolls" type="number" name="numRolls" min="1" max="40" step="1">
+      </div>
+      <div class="form-item">
+        <label for="rollGoal">Difficulty Class:</label>
+        <input [(ngModel)]="rollGoal" type="number" name="rollGoal" min="1" max="50" step="1">
+      </div>
+      <div class="form-item">
+        <label for="rollModifier">Modifier:</label>
+        <input [(ngModel)]="rollModifier" type="number" name="rollModifier" min="-50" max="50" step="1">
+      </div>
     </div>
-    <div class="form-item">
-      <label for="rollGoal">Difficulty Class:</label>
-      <input [(ngModel)]="rollGoal" type="number" name="rollGoal" min="1" max="50" step="1">
+    <div class="form-buttons">
+      <div class="form-item-button">
+        <button (click)="getRolls()">Roll!</button>
+      </div>
     </div>
-    <div class="form-item">
-      <label for="rollModifier">Modifier:</label>
-      <input [(ngModel)]="rollModifier" type="number" name="rollModifier" min="-50" max="50" step="1">
+    <div class="form-summary">
+      Hits: {{rollSuccesses}}
     </div>
   </div>
-  <div class="form-buttons">
-    <div class="form-item-button">
-      <button (click)="getRolls()">Roll!</button>
-    </div>
+
+  <br>
+
+  <div class="rolls-list">
+    <table>
+      <thead>
+        <th>#</th>
+        <th>Result</th>
+        <th>Roll</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let roll of rolls" [class.success]="roll.roll >= rollGoal">
+          <td class="roll-id">{{roll.id}}</td> 
+          <td class="roll-message">{{roll.message}}</td>
+          <td class="roll-value">{{roll.roll}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-</div>
 
-<br>
-
-<div class="rolls-list">
-  <table>
-    <thead>
-      <th>#</th>
-      <th>Result</th>
-      <th>Roll</th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let roll of rolls" [class.success]="roll.roll >= rollGoal">
-        <td class="roll-id">{{roll.id}}</td> 
-        <td class="roll-message">{{roll.message}}</td>
-        <td class="roll-value">{{roll.roll}}</td>
-      </tr>
-    </tbody>
-  </table>
 </div>

@@ -9,22 +9,31 @@ export class RollsService {
   constructor() { }
 
   getRolls(numRolls: number, rollGoal: number, rollModifier: number): Roll[] {
-    for(var i=0; i <= numRolls; i++){
+
+    for(var i=1; i <= numRolls; i++){
       
       // Create the roll
       let r = new Roll;
       r.id = i;
-      r.roll = this.generateRandomRoll() + rollModifier;
+      r.roll = this.generateRandomRoll();
+      r.roll = r.roll + rollModifier;
 
       // update the success/fail message
       if(r.roll - rollModifier === 20) {
-        r.message = "Success (Natural 20!)";
+        r.result = true;
+        r.message = "Critical Hit (Natural 20)!!!";
       }
       else if(r.roll >= rollGoal) {
-        r.message = "Success";
+        r.result = true;
+        r.message = "Hit";
       }
-      else if(r.roll < rollGoal) {
-        r.message = "fail";
+      else if(r.roll - rollModifier === 1) {
+        r.result = false;
+        r.message = "Critical Miss (Natural 1)!!!";
+      }
+      else {
+        r.result = false;
+        r.message = "Miss";
       }
 
       // Push onto the collection

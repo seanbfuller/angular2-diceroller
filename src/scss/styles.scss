@@ -19,6 +19,9 @@ h2, h3 {
 }
 
 // Nav
-nav .active {
-  color: #666666;
+nav {
+  margin-bottom: 1em;
+  .active {
+    color: #666666;
+  }
 }

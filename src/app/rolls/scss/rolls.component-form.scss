@@ -15,32 +15,21 @@
   }
 }
 
+.form-summary {
+  margin-top: 0.75em;
+  padding-top: 0.5em;
+  border-top: 1px solid white;
+  font-weight: bold;
+}
+
 
 @media (min-width: $breakpoint-min-small) {
-  .rolls-form {
+  .container {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
+  }
 
-    .form-items {
-      width: 80%;
-      display: flex;
-      flex-flow: row wrap;
-      align-items: center;
-    }
-
-    .form-buttons {
-      width: 20%;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-around;
-      align-items: center;
-    }
-
-    .form-item {
-      padding-right: 1em;
-    }
-
+  .rolls-form {
+    padding-right: 2em;
   }
 }

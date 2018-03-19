@@ -1,4 +1,4 @@
-
+@import "../../../scss/variables.scss";
 
 .rolls-list {
   text-align: left;
@@ -33,4 +33,10 @@
 .rolls-list .success {
   color: green;
   font-weight: bold;
+}
+
+@media (min-width: $breakpoint-min-small) {
+  .rolls-list {
+    padding-left: 2em;
+  }
 }
