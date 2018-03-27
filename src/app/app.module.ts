@@ -7,10 +7,16 @@ import { AppComponent } from './app.component';
 import { RollsComponent } from './rolls/rolls.component';
 import { RollsService } from './rolls/rolls.service';
 import { NotFoundComponent } from './not-found.component';
+import { RollsSkillComponent } from './rolls-skill/rolls-skill.component';
 
+/**
+ * Define Routes
+ */
 const appRoutes: Routes = [
   // hit rolls
   { path: 'hit-rolls', component: RollsComponent },
+  // skill rolls
+  { path: 'rolls-skill', component: RollsSkillComponent },
   // default
   { path: '',
     redirectTo: '/hit-rolls',
@@ -24,7 +30,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     RollsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    RollsSkillComponent
   ],
   imports: [
     RouterModule.forRoot(

@@ -1,0 +1,42 @@
+@import "../../../scss/variables.scss";
+
+.rolls-list {
+  text-align: left;
+}
+.rolls-list ul {
+  list-style: none
+}
+
+.rolls-list {
+  color: #fd9898;
+}
+.rolls-list table {
+  border: solid thin #666; 
+  border-collapse: collapse;
+}
+.rolls-list table th {
+  border: solid thin #666;   
+  padding: 0.25em 0.5em;
+  color: #555;
+  font-weight: bold;
+}
+.rolls-list table td {
+  border: solid thin #666; 
+  padding: 0.25em 0.5em;
+}
+.rolls-list .roll-id {
+  font-size: .8em;
+  color: #666;
+  font-weight: normal;
+}
+
+.rolls-list .success {
+  color: green;
+  font-weight: bold;
+}
+
+@media (min-width: $breakpoint-min-small) {
+  .rolls-list {
+    padding-left: 2em;
+  }
+}

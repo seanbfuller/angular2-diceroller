@@ -21,7 +21,7 @@ export class RollsService {
       // update the success/fail message
       if(r.roll - rollModifier === 20) {
         r.result = true;
-        r.message = "Critical Hit (Natural 20)!!!";
+        r.message = "Critical Hit!!!";
       }
       else if(r.roll >= rollGoal) {
         r.result = true;
@@ -29,7 +29,7 @@ export class RollsService {
       }
       else if(r.roll - rollModifier === 1) {
         r.result = false;
-        r.message = "Critical Miss (Natural 1)!!!";
+        r.message = "Critical Miss!!!";
       }
       else {
         r.result = false;

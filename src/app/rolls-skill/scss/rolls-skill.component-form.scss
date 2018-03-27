@@ -1,0 +1,35 @@
+@import "../../../scss/variables.scss";
+
+
+.rolls-form {
+  display: block;
+  background-color: #666666;
+  color: #ffffff;
+  padding: 1em;
+  max-width: 800px;
+
+  .form-item input {
+    margin-left: 0.5em;
+    height: 1.4em;
+    font-size: .9em;
+  }
+}
+
+.form-summary {
+  margin-top: 0.75em;
+  padding-top: 0.5em;
+  border-top: 1px solid white;
+  font-weight: bold;
+}
+
+
+@media (min-width: $breakpoint-min-small) {
+  .container {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .rolls-form {
+    padding-right: 2em;
+  }
+}

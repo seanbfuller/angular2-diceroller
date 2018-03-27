@@ -3,15 +3,15 @@
   <div class="rolls-form">
     <div class="form-items">
       <div class="form-item">
-        <label for="numRolls">Number of Rolls:</label>
+        <label for="numRolls">Number of Skill Checks:</label>
         <input [(ngModel)]="numRolls" type="number" name="numRolls" min="1" max="40" step="1">
       </div>
       <div class="form-item">
-        <label for="rollGoal">Target Armor Class:</label>
+        <label for="rollGoal">Difficulty Class:</label>
         <input [(ngModel)]="rollGoal" type="number" name="rollGoal" min="1" max="50" step="1">
       </div>
       <div class="form-item">
-        <label for="rollModifier">Attack Modifier:</label>
+        <label for="rollModifier">Skill Modifier:</label>
         <input [(ngModel)]="rollModifier" type="number" name="rollModifier" min="-50" max="50" step="1">
       </div>
     </div>
@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="form-summary">
-      Hits: {{rollSuccesses}}
+      Successes: {{rollSuccesses}}
     </div>
   </div>
 
