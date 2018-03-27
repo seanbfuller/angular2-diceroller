@@ -9,7 +9,7 @@ export class RollsService {
   constructor() { }
 
   getRolls(numRolls: number, rollGoal: number, rollModifier: number): Roll[] {
-
+    this.clearRolls();
     for(var i=1; i <= numRolls; i++){
       
       // Create the roll
@@ -41,6 +41,10 @@ export class RollsService {
     }
 
     return this.rolls;
+  }
+
+  clearRolls() {
+    this.rolls = [];
   }
 
   generateRandomRoll(min: number = 1, max: number = 20) {

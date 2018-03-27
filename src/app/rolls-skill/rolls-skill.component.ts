@@ -16,6 +16,7 @@ export class RollsSkillComponent implements OnInit {
   rollSuccesses: number;
 
   constructor(private rollsService: RollsService) {
+    // Set default form values
     this.numRolls = 10;
     this.rollModifier = 2;
     this.rollGoal = 14;
@@ -23,23 +24,19 @@ export class RollsSkillComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Populate on first run
     this.getRolls();
   }
 
   getRolls(): void {
-    this.clearRolls();
     this.rolls = this.rollsService.getRolls(this.numRolls, this.rollGoal, this.rollModifier);
-    this.rollSuccesses = this.countRollSuccesses(this.rolls);
+    this.rollSuccesses = this.countRollSuccesses();
     console.log(this.rollSuccesses);
   }
 
   // Count the number of successes
-  countRollSuccesses(rolls: Roll[]): number {
-    return rolls.filter((x,i) => { return x.result; }).length;
-  }
-
-  clearRolls() {
-    this.rolls.length = 0;
+  countRollSuccesses(): number {
+    return this.rolls.filter((x,i) => { return x.result; }).length;
   }
 
 }

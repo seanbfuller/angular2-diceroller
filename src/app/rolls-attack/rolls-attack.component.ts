@@ -9,13 +9,14 @@ import { RollsService } from '../rolls/rolls.service';
 })
 export class RollsAttackComponent implements OnInit {
 
-  rolls: Roll[] = [];
+  rolls: Roll[];
   numRolls: number;
   rollModifier: number;
   rollGoal: number;
   rollSuccesses: number;
 
   constructor(private rollsService: RollsService) {
+    // Set default form values
     this.numRolls = 10;
     this.rollModifier = 5;
     this.rollGoal = 15;
@@ -23,11 +24,11 @@ export class RollsAttackComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Populate on the first run
     this.getRolls();
   }
 
   getRolls(): void {
-    this.clearRolls();
     this.rolls = this.rollsService.getRolls(this.numRolls, this.rollGoal, this.rollModifier);
     this.rollSuccesses = this.countRollSuccesses(this.rolls);
     console.log(this.rollSuccesses);
@@ -36,10 +37,6 @@ export class RollsAttackComponent implements OnInit {
   // Count the number of successes
   countRollSuccesses(rolls: Roll[]): number {
     return rolls.filter((x,i) => { return x.result; }).length;
-  }
-
-  clearRolls() {
-    this.rolls.length = 0;
   }
 
 }
