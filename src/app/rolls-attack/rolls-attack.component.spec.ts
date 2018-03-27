@@ -19,7 +19,7 @@ class MockService {
   }
 }
 
-describe('RollsComponent', () => {
+describe('RollsAttackComponent', () => {
   let component: RollsAttackComponent;
   let fixture: ComponentFixture<RollsAttackComponent>;
   let de:      DebugElement;
