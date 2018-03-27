@@ -6,8 +6,8 @@ import { DebugElement } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from '../app.component';
-import { RollsComponent } from './rolls.component';
-import { RollsService } from './rolls.service';
+import { RollsAttackComponent } from './rolls-attack.component';
+import { RollsService } from '../rolls/rolls.service';
 
 // Create a mock service for RollsService
 class MockService {
@@ -20,8 +20,8 @@ class MockService {
 }
 
 describe('RollsComponent', () => {
-  let component: RollsComponent;
-  let fixture: ComponentFixture<RollsComponent>;
+  let component: RollsAttackComponent;
+  let fixture: ComponentFixture<RollsAttackComponent>;
   let de:      DebugElement;
   let el:      HTMLElement;
 
@@ -36,7 +36,7 @@ describe('RollsComponent', () => {
       // Add the service as a provider using the mock service
       providers: [{provide: RollsService, useValue: mockService }],
       declarations: [ 
-        RollsComponent,
+        RollsAttackComponent,
         AppComponent
       ]
     })
@@ -44,7 +44,7 @@ describe('RollsComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RollsComponent);
+    fixture = TestBed.createComponent(RollsAttackComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

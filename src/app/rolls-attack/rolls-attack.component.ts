@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Roll } from './roll';
-import { RollsService } from './rolls.service';
+import { Roll } from '../rolls/roll';
+import { RollsService } from '../rolls/rolls.service';
 
 @Component({
-  selector: 'app-rolls',
-  templateUrl: './rolls.component.html',
-  styleUrls: ['./scss/rolls.component-form.scss', './scss/rolls.component-list.scss']
+  selector: 'app-rolls-attack',
+  templateUrl: './rolls-attack.component.html',
+  styleUrls: ['./scss/rolls-attack.component-form.scss', './scss/rolls-attack.component-list.scss']
 })
-export class RollsComponent implements OnInit {
+export class RollsAttackComponent implements OnInit {
 
   rolls: Roll[] = [];
   numRolls: number;

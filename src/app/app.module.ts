@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { RollsComponent } from './rolls/rolls.component';
 import { RollsService } from './rolls/rolls.service';
+import { RollsAttackComponent } from './rolls-attack/rolls-attack.component';
 import { NotFoundComponent } from './not-found.component';
 import { RollsSkillComponent } from './rolls-skill/rolls-skill.component';
 
@@ -14,7 +14,7 @@ import { RollsSkillComponent } from './rolls-skill/rolls-skill.component';
  */
 const appRoutes: Routes = [
   // hit rolls
-  { path: 'hit-rolls', component: RollsComponent },
+  { path: 'hit-rolls', component: RollsAttackComponent },
   // skill rolls
   { path: 'rolls-skill', component: RollsSkillComponent },
   // default
@@ -29,7 +29,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    RollsComponent,
+    RollsAttackComponent,
     NotFoundComponent,
     RollsSkillComponent
   ],

@@ -4,7 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { RollsComponent } from './rolls/rolls.component';
+import { RollsAttackComponent } from './rolls-attack/rolls-attack.component';
 import { RollsService } from './rolls/rolls.service';
 
 // Create a mock service for RollsService
@@ -33,7 +33,7 @@ describe('AppComponent', () => {
       providers: [{provide: RollsService, useValue: mockService }],
       declarations: [
         AppComponent,
-        RollsComponent
+        RollsAttackComponent
       ],
     }).compileComponents();
   }));
