@@ -57,6 +57,6 @@ describe('RollsSkillComponent', () => {
     de = fixture.debugElement.query(By.css('.form-item'));
     el = de.nativeElement;
     expect(el.textContent).toContain("Number of Skill Checks:");
-s  });
+  });
 
 });
