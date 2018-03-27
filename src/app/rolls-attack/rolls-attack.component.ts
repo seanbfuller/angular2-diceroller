@@ -30,8 +30,28 @@ export class RollsAttackComponent implements OnInit {
 
   getRolls(): void {
     this.rolls = this.rollsService.getRolls(this.numRolls, this.rollGoal, this.rollModifier);
+    this.buildRollMessages();
     this.rollSuccesses = this.countRollSuccesses(this.rolls);
     console.log(this.rollSuccesses);
+  }
+
+  // Build the message based on the result
+  buildRollMessages() {
+    for (var r in this.rolls) {
+      // With hit rolls we check for criticals
+      if (this.rolls[r].critical_fail === true) {
+        this.rolls[r].message = "Critical Failure!!!";
+      }
+      else if (this.rolls[r].critical_success === true) {
+        this.rolls[r].message = "Critical Hit!!!";
+      }
+      else if (this.rolls[r].result === true) {
+        this.rolls[r].message = "Hit";
+      }
+      else {
+        this.rolls[r].message = "Miss"; 
+      }
+    }
   }
 
   // Count the number of successes

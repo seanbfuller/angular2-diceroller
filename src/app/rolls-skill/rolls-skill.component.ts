@@ -30,8 +30,22 @@ export class RollsSkillComponent implements OnInit {
 
   getRolls(): void {
     this.rolls = this.rollsService.getRolls(this.numRolls, this.rollGoal, this.rollModifier);
+    this.buildRollMessages();
     this.rollSuccesses = this.countRollSuccesses();
     console.log(this.rollSuccesses);
+  }
+
+  // Build the message based on the result
+  buildRollMessages() {
+    for (var r in this.rolls) {
+      // Skills rolls just get a success or fail.
+      if (this.rolls[r].result === true) {
+        this.rolls[r].message = "Success";
+      }
+      else {
+        this.rolls[r].message = "Fail"; 
+      }
+    }
   }
 
   // Count the number of successes

@@ -9,7 +9,10 @@ export class RollsService {
   constructor() { }
 
   getRolls(numRolls: number, rollGoal: number, rollModifier: number): Roll[] {
+    // Clean out old rolls on this object before proceeding.
     this.clearRolls();
+
+    // Build the number of requested rolls
     for(var i=1; i <= numRolls; i++){
       
       // Create the roll
@@ -21,19 +24,21 @@ export class RollsService {
       // update the success/fail message
       if(r.roll - rollModifier === 20) {
         r.result = true;
-        r.message = "Critical Hit!!!";
+        r.critical_success = true;
+        //r.message = "Critical Hit!!!";
       }
       else if(r.roll >= rollGoal) {
         r.result = true;
-        r.message = "Hit";
+        //r.message = "Hit";
       }
       else if(r.roll - rollModifier === 1) {
         r.result = false;
-        r.message = "Critical Miss!!!";
+        r.critical_fail = true;
+        //r.message = "Critical Miss!!!";
       }
       else {
         r.result = false;
-        r.message = "Miss";
+        //r.message = "Miss";
       }
 
       // Push onto the collection

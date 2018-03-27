@@ -3,4 +3,6 @@ export class Roll {
   roll: number;
   message: string = "Roll";
   result: boolean;
+  critical_fail: boolean;
+  critical_success: boolean;
 }
